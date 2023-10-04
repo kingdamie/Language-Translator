@@ -1,7 +1,9 @@
 const fromText = document.querySelector(".from-text"),
   toText = document.querySelector(".from-to"),
   selectTag = document.querySelectorAll("select"),
-  translateBtn = document.querySelector("button");
+  exchangeIcon = document.querySelector(".exchange"),
+  translateBtn = document.querySelector("button"),
+  Icons = document.querySelectorAll(".row i");
 
 selectTag.forEach((tag, id) => {
     console.log(tag);
@@ -22,6 +24,16 @@ selectTag.forEach((tag, id) => {
     }
 })
 
+exchangeIcon.addEventListener("click", () =>{
+    // exchanging textarea and select tag values
+    let tempText = fromText.value,
+    tempLang = selectTag[0].value;
+    fromText.value = toText.value;
+    selectTag[0].value= selectTag[1].value;
+    toText.value = tempText;
+    selectTag[1].value = tempLang;
+})
+
 translateBtn.addEventListener("click", () =>{
   let Text = fromText.value;
 
@@ -34,4 +46,29 @@ translateBtn.addEventListener("click", () =>{
      toText.value = data.responseData.translatedText;
   });
 
+})
+
+Icons.forEach(icon => {
+    icon.addEventListener("click", ({target}) =>{
+        console.log(target)
+        // to copy the text from the textarea 
+            if(target.classList.contains("fa-copy")){
+                if(target.id == "from"){
+                    navigator.clipboard.writeText(fromText.value)
+                } else{
+ navigator.clipboard.writeText(toText.value);
+                }
+            } else{
+                let utterance;
+                // if clicked icon has from id, speak the fromtextarea value else speak the totextarea value
+                if(target.id == "from"){
+                   utterance = new SpeechSynthesisUtterance(fromText.value);
+                   utterance.lang = selectTag[0].value; // setting utterance language to fromselect tag value
+                }else{
+                  utterance = new SpeechSynthesisUtterance(toText.value);
+                  utterance.lang = selectTag[1].value; // setting utterance language to toselect tag value
+                }
+                speechSynthesis.speak(utterance); // speak the passed utterance
+            }
+    })
 })
