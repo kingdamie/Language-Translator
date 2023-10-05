@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,100&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --yellow: #ef9d1f;
+  --dark-blue: #3b4d61;
+  --light-blue: #6b7b8c;
+}
+
+body {
+  background-color: var(--light-blue);
+  font-family: Montserrat;
+}
+
+body .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: var(--dark-blue);
+  padding: 1.5rem;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(239, 163, 10, 0.705);
+          box-shadow: 0 0 10px rgba(239, 163, 10, 0.705);
+}
+
+body .container .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container .wrapper .text-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+}
+
+body .container .wrapper .text-input textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid var(--yellow);
+  border-radius: 5px;
+  outline: none;
+  height: 150px;
+  color: black;
+  background: #b8b8b8;
+}
+
+body .container .wrapper .text-input .from-to {
+  cursor: not-allowed;
+}
+
+body .container .wrapper .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+body .container .wrapper .controls .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+body .container .wrapper .controls .row .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+body .container .wrapper .controls .row select {
+  width: 70%;
+  padding: 5px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+body .container .wrapper .controls .row select option {
+  padding: 10px;
+  background-color: white;
+  max-height: 30vh;
+  color: var(--dark-blue);
+}
+
+body .container .wrapper .controls .exchange {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px;
+  color: orange;
+}
+
+body .container button {
+  background-color: var(--light-blue);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  color: var(--yellow);
+  font-weight: 700;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+body .container button:hover {
+  background-color: var(--yellow);
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
